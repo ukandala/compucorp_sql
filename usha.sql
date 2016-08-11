@@ -1,0 +1,1 @@
+select distinct c.display_name, c.organization_name, count(ca.id) as number_of_cases  from civicrm_contact as c, civicrm_case as ca, civicrm_case_contact as ccc where c.contact_type="Individual" and ccc.case_id = ca.id and ccc.contact_id=c.id and ca.status_id =1;
